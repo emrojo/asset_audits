@@ -191,6 +191,7 @@ Feature: Verify assay plate positions on the robot
     When I fill in "User barcode" with "2470000100730"
       And I fill in "Instrument barcode" with "abc123456"
       And I select "Assay Plate creation" from "Instrument process"
+      And I wait 1 second
       And I fill in "Bed P4" with "<source_bed>"
       And I fill in "Plate P4" with "<source_plate>"
       And I fill in "Bed P5" with "<destination_1_bed>"
@@ -198,6 +199,7 @@ Feature: Verify assay plate positions on the robot
       And I fill in "Bed P6" with "<destination_2_bed>"
       And I fill in "Plate P6" with "<destination_2_plate>"
       And I press "Submit"
+      And I wait 1 second
     Then I should see "<error_message>"
     Examples:
       | source_bed | source_plate | destination_1_bed | destination_1_plate | destination_2_bed | destination_2_plate | error_message                          |
