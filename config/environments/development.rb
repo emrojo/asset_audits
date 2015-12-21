@@ -14,6 +14,11 @@ ProcessTracking::Application.configure do
   config.action_view.debug_rjs             = true
   config.action_controller.perform_caching = false
 
+  config.api_connection_options               = ActiveSupport::OrderedOptions.new
+  config.api_connection_options.namespace     = 'ProcessTracking'
+  config.api_connection_options.url           = 'http://localhost:3000/api/1/'
+  config.api_connection_options.authorisation = 'development'
+
   # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = false
 
